@@ -7,6 +7,7 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:GoogleReader"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -14,6 +15,10 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+
+    <phone:PhoneApplicationPage.Resources>
+        <local:LinkFormatter x:Key="linkFormatter"/>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -29,11 +34,8 @@
                 <!--Double line list with text wrapping-->
                 <ListBox x:Name="toread" Margin="0,0,-12,0" ItemsSource="{Binding}">
                     <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
+                        <DataTemplate>                         
+                                <TextBlock  Text="{Binding Title.Text}" TextWrapping="Wrap"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -59,6 +61,7 @@
                 </ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
+        <Button Content="Button" Height="72" HorizontalAlignment="Left" Margin="195,143,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
     </Grid>
  
     <!--Panorama-based applications should not show an ApplicationBar-->

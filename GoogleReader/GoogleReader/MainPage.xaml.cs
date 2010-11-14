@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Windows.Data;
+using System.Collections.ObjectModel;
+using System.ServiceModel.Syndication;
 
 namespace GoogleReader
 {
@@ -28,12 +31,32 @@ namespace GoogleReader
 
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            toread.DataContext = 
+        {           
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
             }
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            toread.DataContext = _rh.Feed.Items;
+        }
     }
+
+    public class LinkFormatter : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return ((Collection<SyndicationLink>)value).FirstOrDefault().Uri;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }
+
