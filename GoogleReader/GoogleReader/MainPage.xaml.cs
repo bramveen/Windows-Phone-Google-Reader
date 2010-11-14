@@ -29,7 +29,7 @@ namespace GoogleReader
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            toread.DataContext = 
+            
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
