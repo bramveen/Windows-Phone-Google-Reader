@@ -71,3 +71,4 @@ C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Rea
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\zh-Hant\System.Xml.Serialization.resources.dll
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\GoogleReader.pdb
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\XapCacheFile.xml
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\View.g.i.cs
