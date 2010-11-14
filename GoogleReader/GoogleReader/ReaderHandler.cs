@@ -24,7 +24,8 @@ namespace GoogleReader
         private string _sid = null;
         private string _auth = null;
         private string _token = null;
-        private Cookie _cookie = null; 
+        private Cookie _cookie = null;
+        public SyndicationFeed Feed = null;
 
         public ReaderHandler(string username, string password)
         {
@@ -52,7 +53,7 @@ namespace GoogleReader
             {
                 //StreamReader r = new StreamReader(stream);
                 XmlReader r = XmlReader.Create(stream);
-                SyndicationFeed doc = SyndicationFeed.Load(r);
+                Feed = SyndicationFeed.Load(r);
             }
         }
 
