@@ -25,9 +25,7 @@
  
         <!--Panorama control-->
         <controls:Panorama Title="my application">
-            <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.png"/>
-            </controls:Panorama.Background>
+           
  
             <!--Panorama item one-->
             <controls:PanoramaItem Header="first item">

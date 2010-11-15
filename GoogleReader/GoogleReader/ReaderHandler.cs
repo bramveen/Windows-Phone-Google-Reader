@@ -25,43 +25,28 @@ namespace GoogleReader
         private string _auth = null;
         private string _token = null;
         private Cookie _cookie = null;
-        public SyndicationFeed Feed = null;
 
+        public SyndicationFeed Feed = new SyndicationFeed();
+        
         public ReaderHandler(string username, string password)
         {
             _username = username;
             _password = password;
-            connect();
-        }
-
-        public void GetItems()
-        {
-            string requestUrl = "http://www.google.com/reader/atom/user/-/state/com.google/reading-list";
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(new Uri(requestUrl));
-            req.CookieContainer = new CookieContainer();
-            string AuthHeader = string.Format("GoogleLogin auth={0}", _auth);
-            req.Headers["Authorization"] = AuthHeader;
-            req.CookieContainer.Add(new Uri("http://www.google.com"), _cookie);
-            req.BeginGetResponse(new AsyncCallback(GetItemsCB), req);
-        }
-
-        private void GetItemsCB(IAsyncResult result)
-        {
-            HttpWebRequest request = (HttpWebRequest)result.AsyncState;
-            HttpWebResponse respons = (HttpWebResponse)request.EndGetResponse(result);
-            using (var stream = respons.GetResponseStream())
-            {
-                //StreamReader r = new StreamReader(stream);
-                XmlReader r = XmlReader.Create(stream);
-                Feed = SyndicationFeed.Load(r);
-            }
-        }
-
-        private bool connect()
-        {
             getToken();
-            return true;
         }
+
+        //
+        public void GetReadingList()
+        {
+            ReaderCall("http://www.google.com/reader/atom/user/-/state/com.google/reading-list");
+        }
+
+        public void GetReadingList(Stream ItemFeed)
+        {
+                XmlReader r = XmlReader.Create(ItemFeed);
+                Feed = SyndicationFeed.Load(r);
+        }
+
 
         private void getToken()
         {
@@ -107,9 +92,35 @@ namespace GoogleReader
                 StreamReader r = new StreamReader(stream);
                 _token = r.ReadToEnd();
             }
-            GetItems();
+            GetReadingList();
         }
 
+        private void ReaderCall(string requestUrl)
+        {
+            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(new Uri(requestUrl));
+            req.CookieContainer = new CookieContainer();
+            string AuthHeader = string.Format("GoogleLogin auth={0}", _auth);
+            req.Headers["Authorization"] = AuthHeader;
+            req.CookieContainer.Add(new Uri("http://www.google.com"), _cookie);
+            req.BeginGetResponse(new AsyncCallback(ReaderCallBack), req);
+
+        }
+
+        private void ReaderCallBack(IAsyncResult result)
+        {
+            Stream sr = null;
+            HttpWebRequest request = (HttpWebRequest)result.AsyncState;
+            HttpWebResponse respons = (HttpWebResponse)request.EndGetResponse(result);
+            sr = respons.GetResponseStream();
+            switch (respons.ResponseUri.ToString())
+            {
+                case "http://www.google.com/reader/atom/user/-/state/com.google/reading-list":
+                    GetReadingList(sr);
+                    break;
+            }
+
+            
+        }
         
      }
 }

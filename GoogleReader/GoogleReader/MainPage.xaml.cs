@@ -32,15 +32,15 @@ namespace GoogleReader
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            toread.DataContext = _rh.Feed.Items;
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
-            }
+            }            
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            toread.DataContext = _rh.Feed.Items;
+        {          
         }
 
         private void toread_SelectionChanged(object sender, SelectionChangedEventArgs e)
