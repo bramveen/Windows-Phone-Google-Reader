@@ -16,6 +16,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
 using System.Json;
+using System.Collections.ObjectModel;
+using System.Collections;
 
 
 namespace GoogleReader
@@ -28,7 +30,6 @@ namespace GoogleReader
         private string _auth = null;
         private string _token = null;
         private Cookie _cookie = null;
-       
 
         public SyndicationFeed ReadingList = new SyndicationFeed();
         public event InitiatedHandler Initiated;
@@ -70,6 +71,23 @@ namespace GoogleReader
                  string id = js["id"];
                  int count = js["count"];
             }
+        }
+
+        public void GetSubscriptions()
+        {
+            ReaderCall("http://www.google.com/reader/api/0/subscription/list?output=json");
+        }
+
+        public void GetSubscriptions(Stream Subscriptions)
+        {
+            JsonObject obj = (JsonObject)JsonObject.Load(Subscriptions);
+            foreach (JsonObject js in obj["subscriptions"])
+            {
+                Subscription sub = new Subscription();
+                sub.id = js["id"];
+                sub.label = js["label"];     
+                
+            }          
         }
 
 
@@ -145,9 +163,18 @@ namespace GoogleReader
                 case "http://www.google.com/reader/api/0/unread-count?all=true&output=json&ck=1255643091105&client=scrol":
                     GetUnreadCount(sr);
                     break;
+                case "http://www.google.com/reader/api/0/subscription/list?output=json":
+                    GetSubscriptions(sr);
+                    break;
             }
 
             
+        }
+
+        public class Subscription
+        {
+           public string id { get; set; }
+           public string label { get; set; }
         }
         
      }
