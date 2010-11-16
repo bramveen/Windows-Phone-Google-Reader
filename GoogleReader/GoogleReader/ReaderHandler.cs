@@ -13,6 +13,8 @@ using System.Threading;
 using System.Windows.Threading;
 using System.ServiceModel.Syndication;
 using System.Xml;
+using System.Xml.Linq;
+using System.Linq;
 
 
 namespace GoogleReader
@@ -25,8 +27,14 @@ namespace GoogleReader
         private string _auth = null;
         private string _token = null;
         private Cookie _cookie = null;
+       
 
-        public SyndicationFeed Feed = new SyndicationFeed();
+        public SyndicationFeed ReadingList = new SyndicationFeed();
+        public event InitiatedHandler Initiated;
+        public delegate void InitiatedHandler(object sender, EventArgs e);
+        public event ReadingListRefreshedHandler ReadingListRefreshed;
+        public delegate void ReadingListRefreshedHandler(object sender, EventArgs e);
+
         
         public ReaderHandler(string username, string password)
         {
@@ -43,8 +51,20 @@ namespace GoogleReader
 
         public void GetReadingList(Stream ItemFeed)
         {
-                XmlReader r = XmlReader.Create(ItemFeed);
-                Feed = SyndicationFeed.Load(r);
+                XmlReader r = XmlReader.Create(It.emFeed);
+                ReadingList = SyndicationFeed.Load(r);
+                ReadingListRefreshed(this, new EventArgs());
+        }
+
+        public void GetUnreadCount()
+        {
+            ReaderCall("http://www.google.com/reader/api/0/unread-count");
+        }
+
+        public void GetUnreadCount(Stream UnreadFeed)
+        {
+            XmlReader r = XmlReader.Create(UnreadFeed);
+            ReadingList = SyndicationFeed.Load(r);
         }
 
 
@@ -92,7 +112,7 @@ namespace GoogleReader
                 StreamReader r = new StreamReader(stream);
                 _token = r.ReadToEnd();
             }
-            GetReadingList();
+            Initiated(this, new EventArgs());
         }
 
         private void ReaderCall(string requestUrl)
@@ -116,6 +136,9 @@ namespace GoogleReader
             {
                 case "http://www.google.com/reader/atom/user/-/state/com.google/reading-list":
                     GetReadingList(sr);
+                    break;
+                case "http://www.google.com/reader/api/0/unread-count":
+                    GetUnreadCount(sr);
                     break;
             }
 

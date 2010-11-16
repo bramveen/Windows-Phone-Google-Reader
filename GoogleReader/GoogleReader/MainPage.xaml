@@ -30,7 +30,7 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="first item">
                 <!--Double line list with text wrapping-->
-                <ListBox x:Name="toread" Margin="0,0,-12,0" ItemsSource="{Binding}" SelectionChanged="toread_SelectionChanged">
+                <ListBox x:Name="toread" Margin="0,0,-12,0" ItemsSource="{Binding Items}" SelectionChanged="toread_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>                         
                                 <TextBlock  Text="{Binding Title.Text}" TextWrapping="Wrap"/>

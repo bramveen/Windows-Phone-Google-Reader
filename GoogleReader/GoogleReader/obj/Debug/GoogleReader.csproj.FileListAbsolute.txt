@@ -72,3 +72,4 @@ C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Rea
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\GoogleReader.pdb
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\XapCacheFile.xml
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\View.g.i.cs
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\System.ServiceModel.Syndication.dll

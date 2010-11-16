@@ -18,12 +18,12 @@ namespace GoogleReader
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        ReaderHandler _rh = null; 
+        
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-            _rh = new ReaderHandler("bramveenhof@gmail.com", "G3h31m3n");
+            
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
@@ -32,7 +32,6 @@ namespace GoogleReader
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            toread.DataContext = _rh.Feed.Items;
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();

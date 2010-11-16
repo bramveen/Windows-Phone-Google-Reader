@@ -16,18 +16,21 @@ namespace GoogleReader
 {
     public partial class View : PhoneApplicationPage
     {
+        SyndicationItem si = null;
+
         public View()
         {
             InitializeComponent();
             Loaded += new RoutedEventHandler(Page1_Loaded);
+            FrameworkElement root = Application.Current.RootVisual as FrameworkElement;
+            si = (SyndicationItem)root.DataContext;
+            PageTitle.DataContext = si.Title.Text;
+            ApplicationTitle.DataContext = si.SourceFeed.Title.Text;
         }
 
         void Page1_Loaded(object sender, RoutedEventArgs e)
         {
-            string _url = string.Empty;
-            this.NavigationContext.QueryString.TryGetValue("Url", out _url);
-            FrameworkElement root = Application.Current.RootVisual as FrameworkElement;
-            SyndicationItem si = (SyndicationItem)root.DataContext;
+
             TextSyndicationContent sc = (TextSyndicationContent)si.Content;
             interwebs.NavigateToString(sc.Text);
         }
