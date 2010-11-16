@@ -43,14 +43,13 @@
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
             <controls:PanoramaItem Header="second item">
                 <!--Double line list with image placeholder and text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Catagories}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <!--Replace rectangle with image-->
-                                <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
-                                <StackPanel Width="311">                                    
-                                    
+                                <StackPanel Width="311">
+                                    <TextBlock Text="{Binding label}" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding unreadcount}" TextWrapping="Wrap"/>
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>

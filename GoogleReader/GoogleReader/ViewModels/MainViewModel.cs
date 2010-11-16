@@ -21,7 +21,11 @@ namespace GoogleReader
     public class MainViewModel : INotifyPropertyChanged
     {
         public ReaderHandler _rh = null;
-        
+        /// <summary>
+        /// A collection for ItemViewModel objects.
+        /// </summary>
+        public ObservableCollection<SyndicationItem> Items { get; private set; }
+        public ObservableCollection<Catagory> Catagories { get; private set; }
 
         public MainViewModel()
         {
@@ -30,12 +34,13 @@ namespace GoogleReader
             _rh.Initiated += new ReaderHandler.InitiatedHandler(_rh_Initiated);
 
             this.Items = new ObservableCollection<SyndicationItem>();
+            this.Catagories = new ObservableCollection<Catagory>();
         }
 
         void _rh_Initiated(object sender, EventArgs e)
         {
             _rh.GetReadingList();
-            _rh.GetUnreadCount();
+            _rh.GetSubscriptions();
         }
 
         void _rh_FeedsRefreshed(object sender, EventArgs e)
@@ -46,10 +51,7 @@ namespace GoogleReader
                 });
         }
 
-        /// <summary>
-        /// A collection for ItemViewModel objects.
-        /// </summary>
-        public ObservableCollection<SyndicationItem> Items { get; private set; }
+
 
         private string _sampleProperty = "Sample Runtime Property Value";
         /// <summary>
@@ -87,6 +89,11 @@ namespace GoogleReader
             foreach (SyndicationItem i in _rh.ReadingList.Items)
             {
                 this.Items.Add(i);
+            }
+
+            foreach(Catagory c in _rh.Catagories)
+            {
+                this.Catagories.Add(c);
             }
 
             this.IsDataLoaded = true;

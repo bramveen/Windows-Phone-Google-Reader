@@ -16,8 +16,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
 using System.Json;
-using System.Collections.ObjectModel;
-using System.Collections;
+using System.Collections.Generic;
 
 
 namespace GoogleReader
@@ -32,6 +31,8 @@ namespace GoogleReader
         private Cookie _cookie = null;
 
         public SyndicationFeed ReadingList = new SyndicationFeed();
+        public List<Subscription> Subscriptions = new List<Subscription>();
+        public List<Catagory> Catagories = new List<Catagory>();  
         public event InitiatedHandler Initiated;
         public delegate void InitiatedHandler(object sender, EventArgs e);
         public event ReadingListRefreshedHandler ReadingListRefreshed;
@@ -68,8 +69,11 @@ namespace GoogleReader
             JsonObject obj = (JsonObject)JsonObject.Load(UnreadFeed);
             foreach (JsonObject js in obj["unreadcounts"])
             {
-                 string id = js["id"];
-                 int count = js["count"];
+                foreach (Catagory c in Catagories)
+                {
+                    if (c.id == js["id"])
+                        c.unreadcount = js["count"];
+                }
             }
         }
 
@@ -78,16 +82,38 @@ namespace GoogleReader
             ReaderCall("http://www.google.com/reader/api/0/subscription/list?output=json");
         }
 
-        public void GetSubscriptions(Stream Subscriptions)
+        public void GetSubscriptions(Stream strSubscriptions)
         {
-            JsonObject obj = (JsonObject)JsonObject.Load(Subscriptions);
+            JsonObject obj = (JsonObject)JsonObject.Load(strSubscriptions);
             foreach (JsonObject js in obj["subscriptions"])
             {
+                List<Catagory> LCat = new List<Catagory>(); 
                 Subscription sub = new Subscription();
                 sub.id = js["id"];
-                sub.label = js["label"];     
-                
-            }          
+                sub.title = js["title"];
+                foreach(JsonObject q in js["categories"])
+                {
+                    int i = 0; 
+                    Catagory cat = new Catagory();
+                    cat.id = q["id"];
+                    cat.label = q["label"];
+                    cat.unreadcount = 0;
+                    LCat.Add(cat);
+                    foreach (Catagory c in Catagories)
+                    {
+                        if (c.id == cat.id)
+                            i = 1;
+                    }
+                    if (i == 0)
+                    {
+                        Catagories.Add(cat);
+                    } 
+                }
+                sub.catagories = LCat;
+                Subscriptions.Add(sub);
+            }
+            //add unread count to catagories 
+            GetUnreadCount();
         }
 
 
@@ -171,11 +197,20 @@ namespace GoogleReader
             
         }
 
-        public class Subscription
-        {
-           public string id { get; set; }
-           public string label { get; set; }
-        }
-        
+
      }
+    
+    public class Subscription
+    {
+        public string id { get; set; }
+        public string title { get; set; }
+        public List<Catagory> catagories { get; set; }
+    }
+
+    public class Catagory
+    {
+        public string id { get; set; }
+        public string label { get; set; }
+        public int unreadcount { get; set;  } 
+    }
 }
