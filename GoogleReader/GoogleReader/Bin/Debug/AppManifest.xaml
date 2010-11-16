@@ -2,6 +2,7 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="GoogleReader" Source="GoogleReader.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="System.Json" Source="System.Json.dll" />
     <AssemblyPart x:Name="System.ServiceModel.Syndication" Source="System.ServiceModel.Syndication.dll" />
     <AssemblyPart x:Name="System.Xml.Serialization" Source="System.Xml.Serialization.dll" />
   </Deployment.Parts>

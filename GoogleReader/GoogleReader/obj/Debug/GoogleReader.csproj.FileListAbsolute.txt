@@ -73,3 +73,14 @@ C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Rea
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\XapCacheFile.xml
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\obj\Debug\View.g.i.cs
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\System.ServiceModel.Syndication.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\System.Json.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\System.Json.xml
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\de\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\es\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\fr\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\it\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\ja\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\ko\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\ru\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\zh-Hans\System.Json.resources.dll
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GoogleReader\GoogleReader\Bin\Debug\zh-Hant\System.Json.resources.dll

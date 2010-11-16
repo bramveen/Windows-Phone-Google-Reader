@@ -15,6 +15,7 @@ using System.ServiceModel.Syndication;
 using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
+using System.Json;
 
 
 namespace GoogleReader
@@ -51,20 +52,24 @@ namespace GoogleReader
 
         public void GetReadingList(Stream ItemFeed)
         {
-                XmlReader r = XmlReader.Create(It.emFeed);
+                XmlReader r = XmlReader.Create(ItemFeed);
                 ReadingList = SyndicationFeed.Load(r);
                 ReadingListRefreshed(this, new EventArgs());
         }
 
         public void GetUnreadCount()
         {
-            ReaderCall("http://www.google.com/reader/api/0/unread-count");
+            ReaderCall("http://www.google.com/reader/api/0/unread-count?all=true&output=json&ck=1255643091105&client=scrol");
         }
 
         public void GetUnreadCount(Stream UnreadFeed)
         {
-            XmlReader r = XmlReader.Create(UnreadFeed);
-            ReadingList = SyndicationFeed.Load(r);
+            JsonObject obj = (JsonObject)JsonObject.Load(UnreadFeed);
+            foreach (JsonObject js in obj["unreadcounts"])
+            {
+                 string id = js["id"];
+                 int count = js["count"];
+            }
         }
 
 
@@ -137,7 +142,7 @@ namespace GoogleReader
                 case "http://www.google.com/reader/atom/user/-/state/com.google/reading-list":
                     GetReadingList(sr);
                     break;
-                case "http://www.google.com/reader/api/0/unread-count":
+                case "http://www.google.com/reader/api/0/unread-count?all=true&output=json&ck=1255643091105&client=scrol":
                     GetUnreadCount(sr);
                     break;
             }

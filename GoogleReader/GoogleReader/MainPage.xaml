@@ -50,8 +50,7 @@
                                 <!--Replace rectangle with image-->
                                 <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
                                 <StackPanel Width="311">                                    
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                    
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -59,7 +58,6 @@
                 </ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
-        <Button Content="Button" Height="72" HorizontalAlignment="Left" Margin="195,143,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
     </Grid>
  
     <!--Panorama-based applications should not show an ApplicationBar-->
