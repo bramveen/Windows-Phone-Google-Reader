@@ -1,0 +1,23 @@
+﻿<local:MainViewModel 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:GReader" 
+	SampleProperty="Sample Text Property Value">
+
+	<local:MainViewModel.Items>
+		<local:ItemViewModel Title="design one" Feedname="Maecenas praesent accumsan bibendum" Content="BladieblaBladieblaBladieblaBladieblaBladieblaBladieblaBladieblaBladiebla"/>
+		<local:ItemViewModel Title="design two" Feedname="Dictumst eleifend facilisi faucibus" />
+		<local:ItemViewModel Title="design three" Feedname="Habitant inceptos interdum lobortis" />
+		<local:ItemViewModel Title="design four" Feedname="Nascetur pharetra placerat pulvinar" />
+		<local:ItemViewModel Title="design five" Feedname="Sagittis senectus sociosqu suscipit" />
+		<local:ItemViewModel Title="design six" Feedname="Torquent ultrices vehicula volutpat" />
+	</local:MainViewModel.Items>
+	
+	<local:MainViewModel.Labels>
+		<local:LabelViewModel Id="bladiebla" Label="The Next Web" Unread="5" />
+		<local:LabelViewModel Id="bladiebla" Label="Ruuds blog" Unread="6" />
+		<local:LabelViewModel Id="bladiebla" Label="IIS.net" Unread="5" />
+		<local:LabelViewModel Id="bladiebla" Label="Funies" Unread="9" />
+	</local:MainViewModel.Labels>
+
+</local:MainViewModel>
