@@ -43,10 +43,16 @@ namespace GReader
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+			progress.IsIndeterminate = true;
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HideProgressBar.Begin();
         }
     }
 }

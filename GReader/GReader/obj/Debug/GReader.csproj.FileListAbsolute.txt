@@ -14,7 +14,7 @@ C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Rea
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Bin\Debug\Microsoft.Phone.Controls.Maps.dll
 C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
-C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\App.g.i.cs
-C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\DetailsPage.g.i.cs
-C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\ItemsPage.g.i.cs
-C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\MainPage.g.i.cs
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\App.g.cs
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\DetailsPage.g.cs
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\ItemsPage.g.cs
+C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\MainPage.g.cs
