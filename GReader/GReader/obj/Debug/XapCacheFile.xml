@@ -1,10 +1,12 @@
-﻿<xapCache source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Bin\Debug\GReader.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="11/24/2010 2:50:51 PM">
+﻿<xapCache source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Bin\Debug\GReader.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="11/24/2010 5:52:36 PM">
   <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/23/2010 10:49:33 PM" />
-  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\GReader.dll" archivePath="GReader.dll" lastWriteTime="11/24/2010 2:50:47 PM" />
+  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\obj\Debug\GReader.dll" archivePath="GReader.dll" lastWriteTime="11/24/2010 5:52:33 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="9/1/2010 4:51:10 AM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Toolkit\Nov10\Bin\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="11/2/2010 3:36:16 PM" />
-  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="11/23/2010 10:49:32 PM" />
-  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Background.png" archivePath="Background.png" lastWriteTime="11/23/2010 10:49:32 PM" />
   <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="11/23/2010 10:49:33 PM" />
+  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Images\appbar.back.rest.png" archivePath="Images\appbar.back.rest.png" lastWriteTime="8/17/2010 4:41:24 PM" />
+  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Images\appbar.favs.rest.png" archivePath="Images\appbar.favs.rest.png" lastWriteTime="8/17/2010 4:41:24 PM" />
+  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Images\appbar.next.rest.png" archivePath="Images\appbar.next.rest.png" lastWriteTime="8/17/2010 4:41:24 PM" />
+  <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Images\appbar.sync.rest.png" archivePath="Images\appbar.sync.rest.png" lastWriteTime="8/17/2010 4:41:24 PM" />
   <file source="C:\Users\bramveen\Documents\Visual Studio 2010\Projects\Windows-Phone-Google-Reader\GReader\GReader\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="11/24/2010 7:19:42 AM" />
 </xapCache>

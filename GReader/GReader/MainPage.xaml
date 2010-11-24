@@ -6,7 +6,7 @@
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696" 
 	x:Class="GReader.MainPage"
 	d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
 	FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -94,7 +94,17 @@
 			<ProgressBar x:Name="progress" Height="11" Margin="8,354,8,0" VerticalAlignment="Top"/>
 			<Button Content="Button" HorizontalAlignment="Right" Margin="0,0,8,71" VerticalAlignment="Bottom" Click="Button_Click" />	
 		</Grid>
+		<Image HorizontalAlignment="Left" Height="48" Source="Images/appbar.back.rest.png" Stretch="Fill" VerticalAlignment="Top" Width="48"/>
 
 	</Grid>
+	
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.sync.rest.png" Text="Back"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Settings" Click="ApplicationBarMenuItem_Click" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 	
 </phone:PhoneApplicationPage>
